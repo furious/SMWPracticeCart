@@ -1,3 +1,3 @@
-echo f | xcopy /y "smw_3.58MHz.smc" "patched.smc"
-asar patch.asm patched.smc
-pause
+copy /y "smw.smc" "SMWPTC3B.smc"
+asar patch.asm SMWPTC3B.smc
+START "" SMWPTC3B.smc

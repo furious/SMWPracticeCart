@@ -1521,11 +1521,11 @@ test_savestate:
 		BEQ .done
 				
 		LDA !util_byetudlr_hold
-		AND #%00100000
+		AND #%00010000
 		BEQ .no_load
 		
 		LDA !util_axlr_hold
-		AND #%00010000
+		AND #%00100000
 		BEQ .test_load
 		
 		JSL activate_save_state
@@ -1536,7 +1536,7 @@ test_savestate:
 		CMP #$BD
 		BNE .no_load
 		LDA !util_axlr_hold
-		AND #%00100000
+		AND #%00010000
 		BEQ .no_load
 		
 		LDA $705000+!in_record_mode ; save state was in movie
@@ -1577,7 +1577,7 @@ test_slowdown:
 		BNE .done
 		
 		LDA !util_byetudlr_frame
-		AND #%00010000
+		AND #%00100000
 		BEQ .done
 		
 		LDA !util_axlr_hold
